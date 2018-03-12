@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title> Run </title>
+        <script src='jscode.js'></script>
+        <link rel="stylesheet" type="text/css" href="design.css">
+	</head>
+    <!--size of novel screen onload="initNovel(800, 600);"-->
+    <body>
+        <div id="novelDiv">
+            <div style="position: absolute; 
+                        left:0; top: 0; z-index:-1"> <!--pictures fade in and out; background is behind characters-->
+                <img id="background0" src="media/raindrops.jpg">
+             </div>
+             <div style="position: absolute;
+                left:0; top: 0; z-index:-1">
+                 <img id="background1" src="media/bedone.jpg">
+              </div>
+            <div id="dboxDiv" style="z-index:100"> <!--changed id from dialogDiv to dboxDiv-->
+			</div>
+            </div>
+        <div style="text-align:center;">
+        <!--(margin-top: 0.5em( This is if I want a start over button))-->
+        <input type="button" value="Start Over" onclick="startover"/>
+          <!-- Button for mchanging text-->
+        <input type="button" value="Next" onclick = "moveFW()" />
+        </div>
+		<script>
+        //playing in love with a ghost - we've never met but, can we have a coffee or something
+        coffee = new Audio('media/coffee.ogg'); 
+        coffee.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        coffee.play();
+        
+        function startover()   {
+           window.location.href = "titlescreen.html";
+        }
+        
+		/*function moveFW()	{
+			//I need it to change dialog in the dboxDiv
+		}
+		*/
+		//all the models for my characters and parts
+		//helps it preload when using big images
+		var pics = ["bedone.jpg","happyend.jpg", "raindrops.jpg", "rainglass.png", "rainphoto.jpg"];
+		//loop and length to make a images go in front of each word "saving time"
+		var picstuff = new Array(pics.length);
+		for (var i = 0; i < pics.length; i++)
+		    {
+		        picstuff[i] = new Image();
+		        picstuff[i].src = "media/" + pics[i];
+		    } 
+		//boy
+		var yanHaru;
+		var n;
+		var you;
+		var photo;
+		var textBlock;
+		var left;
+		var right;
+		
+	   function prepareNovel() {
+         novel.imagePath = "media/"; // path to image directory
+         yanHaru = new Character("Haru", {color: "rgb(255,228,225)"});
+         you = new Character(player, {color: "rgb(240,248,255)"});
+         n = new Character("Narrator",{color:"rgb(255,250,250)"});
+         place1 = new Position(300, 400, 0, 0);
+         place2 = new Position(300, 400, 0.5, 0.5);
+         place3 = new Position(300, 400, 1, 0);
+         left = new Position(0, .75, 0, 1);
+         right = new Position(800, 450, 1, 1);
+         photo = new Character("", {position: upperCenter});
+         textArea = new TextBlock("myText");
+	   }
+	   
+	  script =  [
+         label, "start",
+         scene, "bedone.jpg",
+         n, "It was" + date + ", and I still remembered that day clearly. Haru and I ran into his house from the pounding rain. It was my first time at his house. I’ve never been here, yet I couldn’t help how familiar it felt.",
+         yanHaru, "Are you alright?",
+         you, "Yeah"
+         ]
+		</script>
+	</body>
+</html>
