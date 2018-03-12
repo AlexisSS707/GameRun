@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title> Run </title>
+        <script src='jscode.js'></script>
+        <link rel="stylesheet" type="text/css" href="design.css">
+	</head>
+	<body>
+        <header>
+        <h1> Run </h1>
+        </header>
+        
+        <input id="start" type="button" onclick="gameStart()" value="Welcome In" /> 
+        <br>
+        <input id="exit" type="button" onclick="exitGame()" value="Leave" /> 
+		<!--end the game but have a text box pop up-->
+        <script>
+        alert("Thanks for coming! :D");
+        
+         //audio play on loop on titlescreen
+         myAudio = new Audio('media/Tears.ogg'); 
+         myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        myAudio.play();
+            //Ether & Dream City - Tears of A Shadow
+       //js     
+		function gameStart()	{
+         var player = prompt("Friend, your name?");
+         var date = prompt("What is the date?");
+        /*var gender = prompt("Are you a girl or boy?");
+            if (gender == girl)    {
+                document.write("girl");
+            }else{
+                document.write("boy";)
+            }
+		}*/
+		//js their answers will be put into the script in <span>
+		alert("So " + player + " what do you want to do?");
+        window.location.href = "game.html";
+        var haha = new Audio('media/laugh.ogg');
+        haha.play();
+        document.getElementById("insertName").innerHTML = "" + player + "";
+		  document.getElementById("insertYear").innerHTML = "" + date + "";
+		  document.getElementById("insertGender").innerHTML = "";
+		}
+		
+        //js it closes the window
+		function exitGame()	{
+		  alert("Please don't leave me.");
+            myWindow.close();
+		}
+        
+      //background for titlescreen
+      document.body.style.backgroundImage = "url('media/raindrops.jpg')";
+       
+        </script>
+	</body>
+</html>
