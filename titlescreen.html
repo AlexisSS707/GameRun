@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title> Run </title>
+        <script src='jscode.js'></script>
+        <link rel="stylesheet" type="text/css" href="design.css">
+        <style>
+           /*for the titlepage*/
+            body   {
+               background-image: url('media/raindrops.jpg');
+               background-size: 100% auto;
+            }
+
+        </style>
+	</head>
+	<body>
+        <header>
+        <h1> Run </h1>
+        </header>
+        <br>
+        <br>
+        <br>
+        <input id="start" type="button" onclick="gameStart()" value="Welcome In" /> 
+        <br>
+        <input id="exit" type="button" onclick="exitGame()" value="Leave" /> 
+		<!--end the game but have a text box pop up-->
+        <script>
+        alert("Thanks for coming! :D");
+         //gender depends on word outcome
+         var gender = prompt("Are you a girl or boy?");
+         if (gender == "girl")   {
+            gender = " Young lady";
+         }else if
+            (gender == "boy")  {
+            gender = " Young man";
+         }else{
+         gender = "Friend";
+         }
+         var player = prompt(gender + ", your name?");
+         
+         //audio play on loop on titlescreen
+         myAudio = new Audio('media/Tears.ogg'); 
+         myAudio.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        myAudio.play();
+          
+        </script>
+	</body>
+</html>
