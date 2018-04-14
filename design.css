@@ -15,21 +15,16 @@ body {
 #novelDiv   {
     width: 800px;
     height: 600px;
-    border: 1px solid blue;
+    border: 2px solid blue;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     text-align: center;
 }
 
-input a:hover {
-    color: white;
-    background-color: gray;
-}
-
 header  {
     text-align: center;
-    height: 25px;
+    height: 5%;
 }
 
 /*font color*/
@@ -40,7 +35,7 @@ h1  {
     margin: 150px;
 }
 
-/*my button will look a certian way*/
+/*my buttons will look a certian way*/
 input  {
     background-color: gray;
     color: white;
@@ -50,13 +45,15 @@ input  {
     cursor: pointer;
     font-size: 20px;
     border: 2px solid;
+    border-radius: 12px;
 }
 
 input:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   color: white;
+   background-color: blue;
 }
 
-/*Fix it to match the tone*/
 #dboxDiv {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -65,27 +62,13 @@ input:hover {
     height: 140px;
     top: 450px;
     left: 0;
-    padding: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
     background-color: #3d372c;
     color: white;
     text-align: left;
-    opacity: 0.85;
-}
-
-.menuItem {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    background-color: rgb("0,80,160");
-    color: white;
-    text-align: center;
-    width: 75%;
-    margin: 0.5em auto;
-    padding: 0.5em 3em;
-    border-radius: 15px;
-}
-
-.menuItem:hover {
-    background-color: rgb("0,255,169");
+    opacity: 0.90;
+    border-radius: 12px;
 }
 
 #background0, #background1  {
@@ -97,7 +80,12 @@ input:hover {
    right: 0;
    bottom: 0;
    position: absolute;
-   left: 790px;
+   left: 785px;
+}
+
+#ticktock   {
+   right:10;
+   bottom: 10;
 }
 
 /*the protangonist position*/
@@ -111,4 +99,57 @@ input:hover {
    position: absolute;
    top: 100px;
    left: 450px;
+}
+
+#notLeave   {
+   position: absolute;
+   top: 200px;
+   left: 450px;
+   color: white;
+   font-weight: bold;
+}
+
+#badend  {
+   font-size: 36px;
+   font-weight: bold;    
+   font-family: Arial, Helvetica, sans-serif;
+   color: red;
+   text-align: center;
+   background-image: url(media/rainglass.png);
+   width: 85%;
+   margin: auto;
+   margin-top: 5%;
+}
+
+/*#lastpic {
+   height: 40%;
+   width: 85%;
+   margin: auto;
+   margin-top: 5%;
+   background-image: url(media/rainphoto.jpg);
+}*/
+
+#ticktock   {
+   font: 26px;
+   font-weight: bold;
+   color: white;
+}
+
+#says   {
+   font: 22px;
+   font-weight: bold;
+   color: white;
+}
+
+#autoFW  {
+   color: white;
+   font-weight: bold;
+}
+
+fieldset {
+   width: 100px;
+   color: white;
+   font-weight: bold;
+   left: 785px;
+   position: absolute;
 }
