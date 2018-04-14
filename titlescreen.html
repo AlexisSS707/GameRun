@@ -9,7 +9,6 @@
                background-image: url('media/raindrops.jpg');
                background-size: 100% auto;
             }
-
         </style>
 	</head>
 	<body>
@@ -19,32 +18,20 @@
         <br>
         <br>
         <br>
+        <p>Insert Name,<span id="insertGender"></span></p>
+        <input type="text" name="player" id="name" size="20" maxlength="14"/>
         <input id="start" type="button" onclick="gameStart()" value="Welcome In" /> 
         <br>
-        <input id="exit" type="button" onclick="exitGame()" value="Leave" /> 
+        <input id="exit" type="button" onclick="exitGame()" value="Leave" />
+        <br>
+        <div id="says">What choice will you make today on <p id="ticktock"></p></div>
 		<!--end the game but have a text box pop up-->
         <script>
-        alert("Thanks for coming! :D");
-         //gender depends on word outcome
-         var gender = prompt("Are you a girl or boy?");
-         if (gender == "girl")   {
-            gender = " Young lady";
-         }else if
-            (gender == "boy")  {
-            gender = " Young man";
-         }else{
-         gender = "Friend";
-         }
-         var player = prompt(gender + ", your name?");
-         
-         //audio play on loop on titlescreen
-         myAudio = new Audio('media/Tears.ogg'); 
-         myAudio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        myAudio.play();
-          
+        opening.play();
+         ask();
+		//time on the screen
+      var d = new Date();
+      document.getElementById("ticktock").innerHTML = d.toDateString();
         </script>
 	</body>
 </html>
