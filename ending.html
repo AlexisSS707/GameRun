@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title> Run </title>
+        <script src='jscode.js'></script>
+        <link rel="stylesheet" type="text/css" href="design.css">
+	</head>
+		<body>
+		   <input type="button" value="Press For Ending" onclick="appendElement('#badend')">
+		   <div id='badend'></div>
+		   <div id='lastpic'></div>
+		   <input type="button" value="Try Again?" onclick="startover()">
+			<script>
+			scary.play();
+       //click
+		var sad = document.getElementById('badend');
+		sad.addEventListener("click", click, false);
+		function click()
+		{
+		   haha.play();
+			document.querySelector('#badend').textContent="BAD END";
+			var imgelement = document.getElementById('badend');
+			imgelement.src="media/rainphoto.jpg";
+		}
+			</script>
+		</body>
+</html>
