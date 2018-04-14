@@ -20,10 +20,14 @@
                <img class="image1" id="character" src = "media/girl.png" height="360px" width="190px">
                <img class="image1" id="character" src = "media/boy.png" height="360px" width="190px">
                <img class="image" id="guy" src = "media/yanHaru.png" height="360px" width="190px">
+               <p id="notLeave"></p>
               </div>
             <div id="dboxDiv" style="z-index:100"> <!--changed id from dialogDiv to dboxDiv-->
             </div>
-            <input type="button" id="nexto" value="Next>" onclick = "moveFW()"/>
+            <input type="button" id="nexto" value=">" onclick = "moveFW()"/>
+            <fieldset>
+					<input type="radio" name="auto" id="autoFW" >Autoplay?<br />
+				</fieldset>
             </div>
         <div style="text-align:center;">
         <!--(margin-top: 0.5em( This is if I want a start over button))-->
@@ -31,13 +35,29 @@
           <!-- Button for mchanging text-->
         </div>
 		<script>
-        //playing in love with a ghost - we've never met but, can we have a coffee or something
-        coffee = new Audio('media/coffee.ogg'); 
-        coffee.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        coffee.play();
+         coffee.play();
+      document.getElementById('background1').addEventListener("mouseover", mouseover);
+	   function mouseover()
+		   {
+		   document.querySelector('#notLeave').textContent="Don't Leave";
+		   var imgelement = document.getElementById('background1');
+			imgelement.src="media/yanHarupick.png";
+		   }
+		   
+		document.querySelector("#autoFW").addEventListener('click',autoFW);
+      function autoFW(e)
+		{	
+		   var automatic;
+			var radio = document.getElementsByName('auto');
+				if (radio[automatic] == true)
+				{
+			   for (var automatic = 0; automatic < script.length; automatic++)
+			   {
+				document.getElementById("dboxDiv").innerHTML = script[automatic];
+				}
+			}
+		}
+		
 		</script>
 	</body>
 </html>
