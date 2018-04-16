@@ -12,51 +12,57 @@
             <div style="position: absolute; 
                         left:0; top: 0; z-index:-1"> <!--pictures fade in and out; background is behind characters-->
             </div>
+            <input type="text" name="player" id="name" size="8" maxlength="12" placeholder="Your Name"/>
+            <input type="button" value="ok" id = "there"/>
             <div style="position: absolute;
                 left:0; top: 0; z-index:-1">
                <img id="background1" src="media/bedone.jpg">
-               <!--<img id="background0" src="media/raindrops.jpg"> -->
-
+               <div id="nameField"></div>
                <img class="image1" id="character" src = "media/girl.png" height="360px" width="190px">
                <img class="image1" id="character" src = "media/boy.png" height="360px" width="190px">
                <img class="image" id="guy" src = "media/yanHaru.png" height="360px" width="190px">
-               <p id="notLeave"></p>
               </div>
             <div id="dboxDiv" style="z-index:100"> <!--changed id from dialogDiv to dboxDiv-->
+            
             </div>
             <input type="button" id="nexto" value=">" onclick = "moveFW()"/>
             <fieldset>
-					<input type="radio" name="auto" id="autoFW" >Autoplay?<br />
+					<input type="radio" name="auto" id="autoFW">Autoplay?<br />
 				</fieldset>
             </div>
         <div style="text-align:center;">
         <!--(margin-top: 0.5em( This is if I want a start over button))-->
         <input type="button" value="Start Over" onclick="startover()"/>
-          <!-- Button for mchanging text-->
+          <!-- Button for changing text-->
         </div>
 		<script>
          coffee.play();
-      document.getElementById('background1').addEventListener("mouseover", mouseover);
-	   function mouseover()
-		   {
-		   document.querySelector('#notLeave').textContent="Don't Leave";
-		   var imgelement = document.getElementById('background1');
-			imgelement.src="media/yanHarupick.png";
-		   }
-		   
-		document.querySelector("#autoFW").addEventListener('click',autoFW);
-      function autoFW(e)
+         //player's name in
+         
+         var inputbox1 = document.querySelector("#name");
+	      document.querySelector('#there').addEventListener('click',inputName);
+         inputbox1.addEventListener("focus", setPurple, false);
+	      inputbox1.addEventListener("blur", setLBlue, false);
+         function setPurple(e)   {
+	          e.target.style.background="purple";
+	         }
+	      function setLBlue(e)   {
+		         inputbox1.style.background="#336FFF";
+		      }
+      
+      document.querySelector('#autoFW').addEventListener('click', autoFW);
+      setTimeout(function autoFW()
 		{	
 		   var automatic;
-			var radio = document.getElementsByName('auto');
+			var radio = document.getElementsByName('autoFW');
 				if (radio[automatic] == true)
-				{
-			   for (var automatic = 0; automatic < script.length; automatic++)
+			{
+			   for (automatic = 0; automatic < script.length; automatic++)
 			   {
 				document.getElementById("dboxDiv").innerHTML = script[automatic];
 				}
 			}
-		}
+		}, 5000)
 		
 		</script>
 	</body>
