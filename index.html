@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> Run </title>
+        <script src='jscode.js'></script>
+        <link rel="stylesheet" type="text/css" href="design.css">
+        <style>
+           /*for the titlepage*/
+            body   {
+               background-image: url('media/raindrops.jpg');
+               background-size: 100% auto;
+            }
+        </style>
+	</head>
+	<body>
+        <header>
+        <h1 id="rightChoice"> Run </h1>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <input id="start" type="button" onclick="gameStart()" value="Come In" /> 
+        <br>
+        <input id="exit" type="button" onclick="exitGame()" value="Leave" />
+        <br>
+        <div id="says">What choice will you make today on <p id="ticktock"></p></div>
+		<!--end the game but have a text box pop up-->
+        <script>
+         opening.play();
+         ask();
+      
+      var happy = document.getElementById('exit');
+		happy.addEventListener("mouseover", real);
+		function real()
+		{
+			document.querySelector('#rightChoice').textContent="Don't Run";
+			var imgelement = document.getElementById('rightChoice');
+			imgelement.src="media/happyend";
+		}
+		var back = document.getElementById('exit');
+		back.addEventListener("mouseout", reals);
+		function reals()
+		{
+			document.querySelector('#rightChoice').textContent="Run";
+			var imgelement = document.getElementById('rightChoice');
+			imgelement.src="media/happyend";
+		}
+		//time on the screen
+      var d = new Date();
+      document.getElementById("ticktock").innerHTML = d.toDateString();
+        </script>
+	</body>
+</html>
