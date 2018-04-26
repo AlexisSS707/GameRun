@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title> Run </title>
+		<title> Don't Run </title>
         <script src='jscode.js'></script>
         <link rel="stylesheet" type="text/css" href="design.css">
 	</head>
@@ -26,9 +26,9 @@
             
             </div>
             <input type="button" id="nexto" value=">" onclick = "moveFW()"/>
-            <fieldset>
-					<input type="radio" name="auto" id="autoFW">Autoplay?<br />
-				</fieldset>
+            <!-- <fieldset>
+					<input type="checkbox" name="auto" id="autoFW">Autoplay?<br />
+				</fieldset>-->
             </div>
         <div style="text-align:center;">
         <!--(margin-top: 0.5em( This is if I want a start over button))-->
@@ -47,23 +47,21 @@
 	          e.target.style.background="purple";
 	         }
 	      function setLBlue(e)   {
-		         inputbox1.style.background="#336FFF";
+		         inputbox1.style.background="skyblue";
 		      }
-      
-      document.querySelector('#autoFW').addEventListener('click', autoFW);
-      setTimeout(function autoFW()
-		{	
-		   var automatic;
-			var radio = document.getElementsByName('autoFW');
-				if (radio[automatic] == true)
-			{
-			   for (automatic = 0; automatic < script.length; automatic++)
-			   {
-				document.getElementById("dboxDiv").innerHTML = script[automatic];
-				}
-			}
-		}, 5000)
-		
+	
+	//https://www.w3schools.com/jsref/met_win_setinterval.asp
+	/*document.getElementById('autoFW').addEventListener('click', autoFW);
+    var checkbox = document.getElementsByName('autoFW');
+    if (checkbox.checked=true) {
+    setInterval(function autoFW()
+		{
+			moveFW();
+		}, 8000)
+    }else{
+      //do nothing
+         moveFW(); 
+    }*/
 		</script>
 	</body>
 </html>
