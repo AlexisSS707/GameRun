@@ -13,13 +13,11 @@
 			scary.play();
        //click
 		var sad = document.getElementById('badend');
-		sad.addEventListener("click", click, false);
-		function click()
+		sad.addEventListener("click", click);
+		function click(e)
 		{
 		   haha.play();
 			document.querySelector('#badend').textContent="BAD END";
-			var imgelement = document.getElementById('badend');
-			imgelement.src="media/rainphoto.jpg";
 		}
 			</script>
 		</body>
